@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
+import Shuffle from "./components/Shuffle";
 import "./App.css";
 const photos = require("./photos");
 
@@ -50,7 +51,7 @@ class Game extends Component {
 
     //if user picked the right one
     const newScore = this.state.score + 1;
-    const newPhotoOrder = shuffle(this.state.photos);
+    const newPhotoOrder = Shuffle(this.state.photos);
 
     if (newScore > this.state.topScore) {
       this.setState({
