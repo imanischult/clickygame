@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
-import Shuffle from "./components/Shuffle";
 import "./App.css";
 const photos = require("./photos");
 
@@ -40,7 +39,7 @@ class Game extends Component {
     });
 
     if (hasBeenClicked) {
-      // reset the game bcuz user lost
+      // reset the game because user lost
       this.setState({
         score: 0,
         clickedPics: [],
@@ -49,9 +48,9 @@ class Game extends Component {
       return;
     }
 
-    //if user picked the right one
+    // if user picked the right one
     const newScore = this.state.score + 1;
-    const newPhotoOrder = Shuffle(this.state.photos);
+    const newPhotoOrder = shuffle(this.state.photos);
 
     if (newScore > this.state.topScore) {
       this.setState({
@@ -105,9 +104,10 @@ class Game extends Component {
           );
         })}
 
-        {clickedPics.map((pic, index) => (
+        {/* Below lines were create to visibly keep track of clicked pics */}
+        {/* {clickedPics.map((pic, index) => (
           <div key={pic + index}>{pic}</div>
-        ))}
+        ))} */}
       </div>
     );
   }
