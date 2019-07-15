@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
-import "./App.css";
+// import "./App.css";
 const photos = require("./photos");
 
 // https://www.netlify.com/blog/2017/01/12/common-javascript-functions-with-lodash/
@@ -105,9 +105,9 @@ class Game extends Component {
         })}
 
         {/* Below lines were create to visibly keep track of clicked pics */}
-        {/* {clickedPics.map((pic, index) => (
+        {clickedPics.map((pic, index) => (
           <div key={pic + index}>{pic}</div>
-        ))} */}
+        ))}
       </div>
     );
   }
