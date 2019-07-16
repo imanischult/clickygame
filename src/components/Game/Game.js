@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Score from "../Score/Score";
 import Navbar from "../Navbar/Navbar";
+import "./Game.css";
 
 // import "./App.css";
 const photos = require("../Photos/photos");
@@ -83,23 +84,26 @@ class Game extends Component {
           topScore={topScore}
           guessedCorrectly={guessedCorrectly}
         />
-        {photos.map(photo => {
-          return (
-            <div
-              onClick={event => {
-                this.handleClick(photo);
-              }}
-              key={photo}
-            >
-              <img
-                src={`/assets/${photo}`}
-                height="300"
-                width="350"
-                alt={photo}
-              />
-            </div>
-          );
-        })}
+        <div className="container">
+          {photos.map(photo => {
+            return (
+              <div
+                className="picDiv"
+                onClick={event => {
+                  this.handleClick(photo);
+                }}
+                key={photo}
+              >
+                <img
+                  src={`/assets/${photo}`}
+                  height="575"
+                  width="490"
+                  alt={photo}
+                />
+              </div>
+            );
+          })}
+        </div>
 
         {/* Below lines were create to visibly keep track of clicked pics */}
         {/* {clickedPics.map((pic, index) => (
