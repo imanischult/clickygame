@@ -15,3 +15,7 @@ img {
     max-width: 2500px;
   }
 }
+
+body {
+  background-color: rgb(197, 144, 186);
+}
